@@ -76,8 +76,8 @@ func main() {
 	// Start AppConfig fetcher
 	go FetchAppConfig(sess)
 
-	// Start SQS producer
-	// go SendEvent(sess)
+	// Start SQS producer (optional)
+	go SendEvent(sess)
 
 	// Start SQS consumer
 	go ConsumeEvents(sess)
